@@ -20,18 +20,17 @@ public class ProfileActivity extends AppCompatActivity {
         EditText editTextLastName = findViewById(R.id.editTextLastName);
         if (getIntent() !=null) {
             Intent intent = getIntent();
-            String pageLabel = intent.getStringExtra("pageLabel");
-            if (pageLabel != null) {
+            if (intent.hasExtra("pageLabel")) {
+                String pageLabel = intent.getStringExtra("pageLabel");
                 TextView pageLabelTextView = findViewById(R.id.pageLabel);
                 pageLabelTextView.setText(pageLabel);
             }
-            String firstName = intent.getStringExtra("firstName");
-            String lastName = intent.getStringExtra("lastName");
-
-            if (firstName != null) {
+            if (intent.hasExtra("firstName")) {
+                String firstName = intent.getStringExtra("firstName");
                 editTextFirstName.setText(firstName);
             }
-            if (lastName != null) {
+            if (intent.hasExtra("lastName")) {
+                String lastName = intent.getStringExtra("lastName");
                 editTextLastName.setText(lastName);
             }
         }
